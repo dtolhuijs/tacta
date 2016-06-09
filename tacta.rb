@@ -3,14 +3,20 @@
 def index(contacts)
   contacts.each_with_index do |contact, i|
      puts "#{i+1}) #{contact[:name]}"
-   end
+  end
 end
 
-def show(contact)
-  puts
-  puts "#{contact[:name]}"
-  puts "phone: #{contact[:phone]}"
-  puts "email: #{contact[:email]}"
+def action_new( contacts )
+   contact = create_new
+
+   contacts << contact
+
+   puts
+   puts "New contact created:"
+   puts
+
+   show( contact )
+   puts
 end
 
 def create_new
@@ -24,6 +30,20 @@ def create_new
    contact[:email] = ask "Email? "
 
    contact
+end
+
+def action_show( contacts, i )
+   contact = contacts[i-1]
+
+   puts
+   show( contact )
+   puts
+end
+
+def show(contact)
+   puts "#{contact[:name]}"
+   puts "phone: #{contact[:phone]}"
+   puts "email: #{contact[:email]}"
 end
 
 def ask(prompt)
@@ -48,26 +68,9 @@ loop do
 
    break if response == "q"
 
-     if response == "n"
-
-     contact = create_new
-
-     contacts << contact
-
-     puts
-     puts "New contact created:"
-     puts
-
-     show( contact )
-     puts
-        else
-      i = response.to_i
-
-      contact = contacts[i-1]
-
-      puts
-      show( contact )
-      puts
+   if response == "n"
+      action_new( contacts )
+   else
+      action_show( contacts, response.to_i )
    end
-
 end
