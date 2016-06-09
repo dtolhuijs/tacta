@@ -60,10 +60,22 @@ def action_delete( contacts )
    puts
 end
 
+def action_error
+   puts
+   puts "Sorry, I don't recognize that command."
+   puts
+end
+
 def ask(prompt)
    puts
    print prompt
    gets.chomp
+end
+
+def contact_exists?(contacts, i)
+  return false unless i =~ /[0-9]+/
+  i = response.to_i
+  !contacts[i-1].nil?
 end
 
 contacts = []
@@ -83,10 +95,12 @@ loop do
    break if response == "q"
 
    if response == "n"
-      action_new( contacts )
+     action_new( contacts )
    elsif response == "d"
-      action_delete( contacts )
+     action_delete( contacts, response )
+   elsif contact_exists?(contacts, response)
+     action_show( contacts, response.to_i )
    else
-      action_show( contacts, response.to_i )
-   end
+     action_error
+  end
 end
