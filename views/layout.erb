@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tacta</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="<%= url('/materialize.css') %>" type="text/css"/>
+    <link rel="stylesheet" href="<%= url('/app.css') %>" type="text/css"/>
+  </head>
+    <body>
+      <!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">one</a></li>
+  <li><a href="#!">two</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper">
+    <a href="contacts-icon.jpg" class="brand-logo">Tacta</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="sass.html">Home</a></li>
+      <li><a href="badges.html">Contacts</a></li>
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">More!<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>
+
+      <div class="container">
+
+
+      <h1>Tacta Contact Manager</h1>
+      <!-- <a href="/contacts/search">[Search]</a> -->
+
+      <hr/>
+
+      <%= yield %>
+
+      </div>
+
+      <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Tacta Contact Management</h5>
+                <p class="grey-text text-lighten-4">Search for the people you might know</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">find us!</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Google +</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2016 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">Follow us!</a>
+            </div>
+          </div>
+        </footer>
+
+    </body>
+</html>

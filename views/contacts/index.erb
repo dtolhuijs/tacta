@@ -1,0 +1,16 @@
+<h2>Contacts</h2>
+
+<% @contacts.each_with_index do |contact, i| %>
+    <h3><a href="/contacts/<%= i %>"><%= contact[:name] %></a></h3>
+<% end %>
+
+<form action="/contacts/search" method="POST">
+  <p>Name: <input type="text" name="name_search"></p>
+  <input class="waves-effect waves-light btn" type="submit" value="Search">
+</form>
+
+
+<br>
+<div>
+<a class="waves-effect waves-light btn" href="/contacts/new">New</a>
+</div>
